@@ -234,6 +234,14 @@ We've successfully tested the platform on the Stellar Testnet with multiple user
 
 ---
 
+## 🔧 Troubleshooting
+
+- **Transaction Failed:** Ensure you have enough tokens in your balance. If you are a creator, ensure the deadline has passed before withdrawing.
+- **Freighter Not Connecting:** Make sure the Freighter extension is installed and set to **Testnet** in the settings.
+- **Contract Error:** Refresh the page and try again. The Testnet can occasionally be slow or unstable.
+
+---
+
 ## 🥋 Black Belt Features
 
 ### ⛽ Fee Sponsorship (Gasless Transactions)
