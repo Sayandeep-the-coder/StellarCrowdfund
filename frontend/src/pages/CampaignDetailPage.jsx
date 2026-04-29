@@ -121,11 +121,22 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
     Failed: 'badge-failed',
   }[status] || 'badge-active';
 
+  const handleShare = () => {
+    const text = encodeURIComponent(`Check out this crowdfunding campaign on Stellar: ${campaign.title}! 🚀 #Stellar #Soroban`);
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  };
+
   return (
     <div className="detail-page animate-fade-in">
-      <button className="btn btn-ghost btn-sm detail-back" onClick={onBack} id="btn-back">
-        ← Back to Campaigns
-      </button>
+      <div className="detail-nav">
+        <button className="btn btn-ghost btn-sm detail-back" onClick={onBack} id="btn-back">
+          ← Back to Campaigns
+        </button>
+        <button className="btn btn-ghost btn-sm detail-share" onClick={handleShare}>
+          📤 Share
+        </button>
+      </div>
 
       <div className="detail-card glass-card">
         {/* Header */}
