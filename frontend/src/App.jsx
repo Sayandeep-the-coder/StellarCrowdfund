@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage.jsx';
 import CampaignDetailPage from './pages/CampaignDetailPage.jsx';
 import CreateCampaignPage from './pages/CreateCampaignPage.jsx';
 import MyActivityPage from './pages/MyActivityPage.jsx';
+import MetricsPage from './pages/MetricsPage.jsx';
 import { useWallet } from './hooks/useWallet.js';
 import { useToast } from './hooks/useToast.js';
 
@@ -108,6 +109,9 @@ export default function App() {
             </button>
           </div>
         );
+
+      case 'metrics':
+        return <MetricsPage publicKey={wallet.publicKey} />;
 
       default:
         return (

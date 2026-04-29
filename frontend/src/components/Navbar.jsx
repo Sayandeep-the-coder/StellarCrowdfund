@@ -45,6 +45,13 @@ export default function Navbar({ publicKey, truncatedKey, connecting, onConnect,
           >
             Explore
           </button>
+          <button
+            className={`nav-link ${activePage === 'metrics' ? 'active' : ''}`}
+            onClick={() => onNavigate('metrics')}
+            id="nav-metrics"
+          >
+            Metrics
+          </button>
           {publicKey && (
             <>
               <button
