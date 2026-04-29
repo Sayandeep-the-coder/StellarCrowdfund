@@ -245,8 +245,7 @@ We've successfully tested the platform on the Stellar Testnet with multiple user
 - Love for the premium **User Interface & Design**.
 
 [📊 View the raw user feedback and testnet verification here](https://docs.google.com/spreadsheets/d/1FnipA4BZrLnwiIm9xticozmAsi24sTWtKkvL9ZkW8qI/edit?usp=sharing)
-
-**🏆 Verified Testnet Addresses:**
+[🐦 View our Community Post on Twitter/X](https://x.com/Sayandeep2026/status/2049418042829074461?s=20)
 - `GAOROSU2N36UHKB6WQVE7GHTFMDH2FH62OGEXRH7YH6RJ5R4GZHDBTLG`
 - `GCPBPHMV4ITVABMXRYJLXF2UVSPUPAHEV47345OMY7WX625SU7QJPFOW`
 - `GCTR3T4QKW4APUEKU2U6V32J7JCJOM2YHJZYCOV2XTE3E7YTRRRY2AOS`
