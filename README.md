@@ -271,7 +271,19 @@ A: Yes, we use **Freighter**, Stellar's official non-custodial wallet. Your priv
 
 ---
 
-1. **Expanded Wallet Support:** While users loved the seamless Freighter integration, we will be adding support for **LOBSTR** and **xBull** wallets to increase accessibility.
+---
+
+## 🤝 How to Contribute
+
+We welcome contributions from the community! Whether it's reporting a bug, suggesting a feature, or submitting a pull request, your help is appreciated.
+
+1. **Fork the Repository**
+2. **Create a Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+---
 2. **Advanced Campaign Discovery:** Implementing search, category filters, and sorting (e.g., "Ending Soon", "Most Funded") to make it even easier to find and fund projects.
 3. **Multi-Asset Funding:** Allowing backers to fund campaigns using Stellar-based **USDC** alongside our native FUND tokens.
 4. **Social Integrations:** Adding one-click social sharing buttons to help creators promote their campaigns organically.
