@@ -81,8 +81,15 @@ export async function createCampaign(publicKey, title, desc, goalXLM, deadline) 
   return await signAndSubmit(tx);
 }
 
-// ── Fund Campaign ────────────────────────────────────────────────────────────
-
+/**
+ * Contribute funds to a campaign.
+ * Automatically checks and creates a trustline if needed.
+ * 
+ * @param {string} publicKey - The funder's public key.
+ * @param {number} campaignId - The ID of the campaign to fund.
+ * @param {number} amountXLM - The amount to contribute in XLM.
+ * @returns {Promise<object>} The result of the contract call.
+ */
 export async function fundCampaign(publicKey, campaignId, amountXLM) {
   if (!CROWDFUNDING_CONTRACT_ID) throw new Error('Crowdfunding contract ID not configured');
 
