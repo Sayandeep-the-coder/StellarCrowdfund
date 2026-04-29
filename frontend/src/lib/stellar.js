@@ -1,10 +1,11 @@
-import { rpc, Networks, Contract, TransactionBuilder, Transaction, Account, BASE_FEE, Keypair, Asset, Operation, scValToNative } from '@stellar/stellar-sdk';
+import { rpc, Networks, Contract, TransactionBuilder, Transaction, Account, BASE_FEE, Keypair, Asset, Operation, scValToNative, FeeBumpTransactionBuilder } from '@stellar/stellar-sdk';
 
 // ── Network Configuration ────────────────────────────────────────────────────
 
 export const NETWORK_PASSPHRASE = import.meta.env.VITE_NETWORK_PASSPHRASE || Networks.TESTNET;
 export const RPC_URL = import.meta.env.VITE_RPC_URL || 'https://soroban-testnet.stellar.org';
 export const HORIZON_URL = 'https://horizon-testnet.stellar.org';
+export const SPONSOR_SECRET = import.meta.env.VITE_SPONSOR_SECRET_KEY || '';
 
 // ── RPC Server ───────────────────────────────────────────────────────────────
 
@@ -97,6 +98,46 @@ export async function submitTx(signedXdr) {
   }
 
   throw new Error('Transaction not found after 60s. Check Stellar explorer.');
+}
+
+// ── Fee Sponsorship (Black Belt Feature) ─────────────────────────────────────
+
+/**
+ * Wraps a signed transaction in a Fee Bump transaction.
+ * This allows the platform (Sponsor) to pay the transaction fees in XLM,
+ * enabling "gasless" transactions for the user.
+ */
+export function wrapInFeeBump(innerXdr) {
+  if (!SPONSOR_SECRET) {
+    console.log('[Fee Sponsorship] No sponsor secret configured. Skipping fee bump.');
+    return innerXdr;
+  }
+
+  try {
+    const sponsorKeypair = Keypair.fromSecret(SPONSOR_SECRET);
+    
+    // Parse the inner transaction signed by the user
+    const innerTx = TransactionBuilder.fromXDR(innerXdr, NETWORK_PASSPHRASE);
+
+    console.log('[Fee Sponsorship] Wrapping transaction in fee bump. Sponsor:', sponsorKeypair.publicKey());
+
+    // Create the fee bump transaction
+    const feeBump = new FeeBumpTransactionBuilder(sponsorKeypair.publicKey(), {
+      // The sponsor pays the fees. We add a small buffer to the inner fee.
+      fee: (parseInt(innerTx.fee || '100', 10) + 100).toString(),
+      networkPassphrase: NETWORK_PASSPHRASE,
+    })
+      .setInnerTransaction(innerTx)
+      .build();
+
+    // Sign the outer transaction with the sponsor's key
+    feeBump.sign(sponsorKeypair);
+    
+    return feeBump.toXDR();
+  } catch (err) {
+    console.error('[Fee Sponsorship] Failed to create fee bump transaction:', err);
+    return innerXdr; // Fallback to user-pays-fee if bump logic fails
+  }
 }
 
 // ── Simulate Contract Call ───────────────────────────────────────────────────

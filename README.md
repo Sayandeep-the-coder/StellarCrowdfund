@@ -22,6 +22,7 @@ A premium, full-stack crowdfunding platform built on the **Stellar Network** usi
 | 🔗 **Auto Trustline** | Automatically sets up token trustlines before first funding |
 | 🎨 **Premium UI** | Glassmorphic dark theme with smooth animations |
 | 📱 **Responsive** | Works on desktop, tablet, and mobile |
+| ⛽ **Fee Sponsorship** | **Black Belt Feature:** Supports gasless transactions via Fee Bumps |
 
 ---
 
@@ -230,6 +231,18 @@ We've successfully tested the platform on the Stellar Testnet with multiple user
 - `GCBCZQYLIENVZGCGYZ3I7LTFIZDEAFGLV2BLBAPVYPPHV2XPCF5URS3Z`
 - `GDFNZCMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL`
 - `GCPBPHMV4ITVABMXRYJLXFZUVSPUPAHEV473450MY7WX625SU7QJPFOW`
+
+---
+
+## 🥋 Black Belt Features
+
+### ⛽ Fee Sponsorship (Gasless Transactions)
+StellarCrowdfund supports **Fee Sponsorship** using Stellar's **Fee Bump** transaction type. This allows the platform to pay for transaction fees in XLM, meaning users can participate without holding any XLM in their wallet!
+
+**How to enable:**
+1. Open `frontend/.env`.
+2. Add `VITE_SPONSOR_SECRET_KEY=YOUR_STELLAR_SECRET_KEY`.
+3. The platform will now automatically wrap user transactions in a fee-bump signed by this sponsor account.
 
 ---
 

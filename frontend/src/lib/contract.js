@@ -6,6 +6,7 @@ import {
   simulateContractCall,
   ensureTrustline,
   NETWORK_PASSPHRASE,
+  wrapInFeeBump,
 } from './stellar.js';
 
 // ── Contract ID from env ─────────────────────────────────────────────────────
@@ -36,7 +37,13 @@ async function signAndSubmit(tx) {
   if (!signed.signedTxXdr) {
     throw new Error('Transaction signing was cancelled by the user.');
   }
-  return await submitTx(signed.signedTxXdr);
+
+  // ── Black Belt Feature: Fee Sponsorship ───────────────────────────────────
+  // If a sponsor is configured, wrap the user-signed transaction in a fee bump.
+  // This allows the sponsor to pay the XLM fees instead of the user.
+  const finalXdr = wrapInFeeBump(signed.signedTxXdr);
+
+  return await submitTx(finalXdr);
 }
 
 // ── Create Campaign ──────────────────────────────────────────────────────────
