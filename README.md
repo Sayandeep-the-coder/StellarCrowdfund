@@ -203,13 +203,20 @@ VITE_RPC_URL=https://soroban-testnet.stellar.org
 
 ---
 
-## 📊 Submission Evidence
+### 📊 Submission Evidence
  
 ### 📈 Metrics & Monitoring Dashboard
 The platform includes a real-time metrics dashboard to track project health and system status.
 - **[Live Metrics Page](https://stellarcrowdfund.vercel.app/metrics)**
 - **Dashboard Screenshot:**
 ![Metrics Dashboard](screenshot/image.png)
+
+### 📂 Data Indexing Approach
+Our platform utilizes a real-time on-chain data indexing strategy to ensure accuracy and transparency:
+- **Strategy:** Direct RPC State Polling & Client-Side Aggregation.
+- **Implementation:** We invoke the `get_all_campaigns` method via the Soroban RPC to fetch the full contract state.
+- **Processing:** Data is indexed and aggregated in real-time within the `lib/contract.js` layer to calculate platform-wide metrics (Total Raised, Success Rate).
+- **Dashboard Link:** [View Indexed Stats](https://stellarcrowdfund.vercel.app/metrics)
 
 ### 🛡️ Security & Compliance
 We prioritize the safety of our users and their funds.
