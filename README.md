@@ -1,8 +1,15 @@
 # 🚀 StellarCrowdfund — Decentralized Crowdfunding on Stellar
 
+**[🌐 Live Demo: https://stellarcrowdfund.vercel.app/](https://stellarcrowdfund.vercel.app/)**
+
 A premium, full-stack crowdfunding platform built on the **Stellar Network** using **Soroban Smart Contracts**. Create campaigns, fund projects, and manage the entire crowdfunding lifecycle — fully on-chain.
 
 ![Stellar Crowdfunding](screenshot/Dashboard.png)
+
+### 🎥 Demo Video
+<video src="screenshot/Screen%20Recording%202026-04-29%20003217.mp4" controls="controls" width="100%">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -203,6 +210,29 @@ VITE_RPC_URL=https://soroban-testnet.stellar.org
 | Home Page | Campaign Grid | Stellar |
 |-----------|--------------|---------|
 | ![Home](screenshot/Dashboard.png) | ![Campaigns](screenshot/Dashboard_2.png) | ![Stellar](screenshot/Stellar.png) |
+
+---
+
+## 🌟 Verified Testnet Users & Feedback
+
+We've successfully tested the platform on the Stellar Testnet with multiple users who provided a **5/5 overall experience rating**! 
+
+**Key highlights from our 5+ verified users:**
+- Praise for the **ease of creating campaigns & funding projects**.
+- Appreciation for the **seamless integration with Freighter**.
+- High marks for the **security and transparency** of the platform.
+- Love for the premium **User Interface & Design**.
+
+[📊 View the raw user feedback and testnet verification here](https://docs.google.com/spreadsheets/d/1FnipA4BZrLnwiIm9xticozmAsi24sTWtKkvL9ZkW8qI/edit?usp=sharing)
+
+**🏆 Verified Testnet Addresses:**
+- `GAOROSU2N36UHKB6WQVE7GHTFMDH2FH62OGEXRH7YH6RJ5R4GZHDBTLG`
+- `GCPBPHMV4ITVABMXRYJLXF2UVSPUPAHEV47345OMY7WX625SU7QJPFOW`
+- `GCTR3T4QKW4APUEKU2U6V32J7JCJOM2YHJZYCOV2XTE3E7YTRRRY2AOS`
+- `GA3UD3SA7RAG3TYSPZCOOHTABK7GXMHQ2IYZ5M5OXRITQZFEZAAAOW4B`
+- `GCBCZQYLIENVZGCGYZ3I7LTFIZDEAFGLV2BLBAPVYPPHV2XPCF5URS3Z`
+- `GDFNZCMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL`
+- `GCPBPHMV4ITVABMXRYJLXFZUVSPUPAHEV473450MY7WX625SU7QJPFOW`
 
 ---
 
