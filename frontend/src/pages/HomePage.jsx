@@ -16,7 +16,26 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
     setLoading(true);
     try {
       const all = await getAllCampaigns(publicKey);
-      setCampaigns(all.sort((a, b) => b.id - a.id));
+      
+      // If logged in, fetch contributions for the visible campaigns
+      let campaignsWithContribs = all;
+      if (publicKey) {
+        const contribPromises = all.map(async (c) => {
+          try {
+            const contrib = await getContribution(publicKey, c.id);
+            return { id: c.id, userContribution: contrib };
+          } catch {
+            return { id: c.id, userContribution: 0 };
+          }
+        });
+        const contribs = await Promise.all(contribPromises);
+        campaignsWithContribs = all.map(c => ({
+          ...c,
+          userContribution: contribs.find(ct => ct.id === c.id)?.userContribution || 0
+        }));
+      }
+
+      setCampaigns(campaignsWithContribs.sort((a, b) => b.id - a.id));
     } catch (err) {
       console.error('Failed to fetch campaigns:', err);
     } finally {
@@ -110,6 +129,7 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
               <CampaignCard
                 key={campaign.id}
                 campaign={campaign}
+                userContribution={campaign.userContribution}
                 onClick={onSelectCampaign}
                 onFund={(c) => setFundTarget(c)}
                 publicKey={publicKey}

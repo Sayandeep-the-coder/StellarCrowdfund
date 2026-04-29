@@ -27,7 +27,7 @@ export default function MyActivityPage({ publicKey, onSelectCampaign }) {
         .map(async (c) => {
           try {
             const contrib = await getContribution(publicKey, c.id);
-            return contrib > 0 ? c : null;
+            return contrib > 0 ? { ...c, userContribution: contrib } : null;
           } catch {
             return null;
           }
@@ -105,6 +105,7 @@ export default function MyActivityPage({ publicKey, onSelectCampaign }) {
             <CampaignCard
               key={c.id}
               campaign={c}
+              userContribution={c.userContribution}
               onClick={onSelectCampaign}
             />
           ))}
