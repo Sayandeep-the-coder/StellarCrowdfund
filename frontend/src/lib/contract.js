@@ -51,8 +51,16 @@ async function signAndSubmit(tx) {
   return await submitTx(finalXdr);
 }
 
-// ── Create Campaign ──────────────────────────────────────────────────────────
-
+/**
+ * Create a new crowdfunding campaign.
+ * 
+ * @param {string} publicKey - The creator's public key.
+ * @param {string} title - Campaign title.
+ * @param {string} desc - Campaign description.
+ * @param {number} goalXLM - Funding goal in XLM.
+ * @param {number} deadline - Deadline timestamp (Unix).
+ * @returns {Promise<object>} The result of the contract call.
+ */
 export async function createCampaign(publicKey, title, desc, goalXLM, deadline) {
   if (!CROWDFUNDING_CONTRACT_ID) throw new Error('Crowdfunding contract ID not configured');
 
