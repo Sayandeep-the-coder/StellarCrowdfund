@@ -203,11 +203,27 @@ VITE_RPC_URL=https://soroban-testnet.stellar.org
 
 ---
 
-## 📸 Screenshots
+## 📊 Submission Evidence
+ 
+### 📈 Metrics & Monitoring Dashboard
+The platform includes a real-time metrics dashboard to track project health and system status.
+- **[Live Metrics Page](https://stellarcrowdfund.vercel.app/metrics)**
+- **Dashboard Screenshot:**
+![Metrics Dashboard](screenshot/image.png)
 
-| Home Page | Campaign Grid | Stellar |
+### 🛡️ Security & Compliance
+We prioritize the safety of our users and their funds.
+- **[Completed Security Checklist](SECURITY.md)**
+- **Key Measures:** Reentrancy protection, input validation, and secure wallet integration.
+
+---
+
+## 📸 Project Screenshots
+
+| Home Page | Campaign Grid | Stellar Explorer |
 |-----------|--------------|---------|
 | ![Home](screenshot/Dashboard.png) | ![Campaigns](screenshot/Dashboard_2.png) | ![Stellar](screenshot/Stellar.png) |
+
 
 ---
 
