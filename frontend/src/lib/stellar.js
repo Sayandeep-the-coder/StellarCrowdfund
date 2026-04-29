@@ -47,6 +47,10 @@ export async function buildContractTx(sourcePublicKey, contractId, method, ...ar
 /**
  * Submit a signed transaction XDR and wait for result.
  * Uses raw JSON-RPC to avoid SDK XDR parsing issues with Soroban envelopes.
+ * 
+ * @param {string} signedXdr - The base64 encoded signed transaction envelope.
+ * @returns {Promise<object>} The transaction result from the RPC server.
+ * @throws {Error} If the transaction fails or times out.
  */
 export async function submitTx(signedXdr) {
   // ── Send ────────────────────────────────────────────────────────────────
