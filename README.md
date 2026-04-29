@@ -248,7 +248,20 @@ StellarCrowdfund supports **Fee Sponsorship** using Stellar's **Fee Bump** trans
 
 ## 🚀 Next Phase Improvements
 
-Based on the highly positive feedback from our verified testnet users, we are planning the following enhancements for our next major release:
+---
+
+## ❓ FAQ
+
+**Q: Do I need XLM to use this platform?**
+A: Thanks to our **Fee Sponsorship** feature, you don't need XLM for transaction fees! However, you still need the funding tokens to contribute to campaigns.
+
+**Q: What happens if a campaign fails?**
+A: If a campaign does not reach its goal by the deadline, all backers can claim a full refund of their contributions.
+
+**Q: Is my wallet secure?**
+A: Yes, we use **Freighter**, Stellar's official non-custodial wallet. Your private keys never leave your device.
+
+---
 
 1. **Expanded Wallet Support:** While users loved the seamless Freighter integration, we will be adding support for **LOBSTR** and **xBull** wallets to increase accessibility.
 2. **Advanced Campaign Discovery:** Implementing search, category filters, and sorting (e.g., "Ending Soon", "Most Funded") to make it even easier to find and fund projects.
