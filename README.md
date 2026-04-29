@@ -6,10 +6,7 @@ A premium, full-stack crowdfunding platform built on the **Stellar Network** usi
 
 ![Stellar Crowdfunding](screenshot/Dashboard.png)
 
-### 🎥 Demo Video
-<video src="screenshot/Screen%20Recording%202026-04-29%20003217.mp4" controls="controls" width="100%">
-  Your browser does not support the video tag.
-</video>
+### 🎥 [Watch the Demo Video on Google Drive](https://drive.google.com/file/d/1rTyOkcp3pJO_ysWP5KIWBOXlvMEO_ufS/view?usp=sharing)
 
 ---
 
