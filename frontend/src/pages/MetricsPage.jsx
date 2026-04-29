@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllCampaigns } from '../lib/contract.js';
+import MetricCard from '../components/MetricCard.jsx';
 import './MetricsPage.css';
 
 export default function MetricsPage({ publicKey }) {
@@ -57,22 +58,10 @@ export default function MetricsPage({ publicKey }) {
 
       {/* Stats Grid */}
       <div className="metrics-grid">
-        <div className="metric-card glass-card">
-          <span className="metric-label">Total Campaigns</span>
-          <span className="metric-value">{stats.total}</span>
-        </div>
-        <div className="metric-card glass-card">
-          <span className="metric-label">Total Funds Raised</span>
-          <span className="metric-value">{stats.raised.toLocaleString()} <small>Tokens</small></span>
-        </div>
-        <div className="metric-card glass-card">
-          <span className="metric-label">Active Projects</span>
-          <span className="metric-value">{stats.active}</span>
-        </div>
-        <div className="metric-card glass-card">
-          <span className="metric-label">Successful Projects</span>
-          <span className="metric-value">{stats.success}</span>
-        </div>
+        <MetricCard label="Total Campaigns" value={stats.total} />
+        <MetricCard label="Total Funds Raised" value={stats.raised.toLocaleString()} unit="Tokens" />
+        <MetricCard label="Active Projects" value={stats.active} />
+        <MetricCard label="Successful Projects" value={stats.success} />
       </div>
 
       <div className="status-sections">
