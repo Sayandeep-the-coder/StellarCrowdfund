@@ -236,6 +236,20 @@ We've successfully tested the platform on the Stellar Testnet with multiple user
 
 ---
 
+## 🚀 Next Phase Improvements
+
+Based on the highly positive feedback from our verified testnet users, we are planning the following enhancements for our next major release:
+
+1. **Expanded Wallet Support:** While users loved the seamless Freighter integration, we will be adding support for **LOBSTR** and **xBull** wallets to increase accessibility.
+2. **Advanced Campaign Discovery:** Implementing search, category filters, and sorting (e.g., "Ending Soon", "Most Funded") to make it even easier to find and fund projects.
+3. **Multi-Asset Funding:** Allowing backers to fund campaigns using Stellar-based **USDC** alongside our native FUND tokens.
+4. **Social Integrations:** Adding one-click social sharing buttons to help creators promote their campaigns organically.
+5. **Rich Text Descriptions:** Enabling markdown support for campaign creators to add images and formatted text to their project descriptions.
+
+> 🔗 **Commit Reference:** Check out the commit incorporating testnet user validation and this roadmap: [`bb447e7`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/bb447e72910371971e3b7d62f8785fdc14bcf6df)
+
+---
+
 ## 🔗 Resources
 
 - **[Crowdfund Contract Explorer](https://lab.stellar.org/smart-contracts/contract-explorer?$=network$id=testnet&label=Testnet&horizonUrl=https:////horizon-testnet.stellar.org&rpcUrl=https:////soroban-testnet.stellar.org&passphrase=Test%20SDF%20Network%20/;%20September%202015;&smartContracts$explorer$contractId=CB6PDLFUQCDHNYBX3MLNWIXDAPAQVITUWRCLUETRJX2Z3KURJX5NQRV5;;)**: Interact with the core Crowdfunding contract on-chain.
