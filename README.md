@@ -235,6 +235,7 @@ We prioritize the safety of our users and their funds.
 ---
 
 ## 🥋 Level 5: User Feedback & Improvements
+## 🥋 Level 5: User Feedback & Improvements
 
 We have onboarded 5 unique users to test the platform on the Stellar Testnet. Their feedback has been instrumental in refining the user experience.
 
