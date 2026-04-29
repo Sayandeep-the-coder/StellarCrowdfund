@@ -2,6 +2,12 @@
   "name": "stellar-faucet-frontend",
   "private": true,
   "version": "1.0.0",
+  "description": "A premium crowdfunding platform built on Stellar and Soroban.",
+  "author": "Sayandeep Saha",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sayandeep-the-coder/StellarCrowdfund"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
