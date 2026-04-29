@@ -18,6 +18,12 @@ export const server = new rpc.Server(RPC_URL, {
 /**
  * Build a Soroban transaction for contract invocation.
  * Uses server.prepareTransaction() which handles simulation + assembly.
+ * 
+ * @param {string} sourcePublicKey - The public key of the account building the transaction.
+ * @param {string} contractId - The ID of the Soroban contract to call.
+ * @param {string} method - The name of the contract function to invoke.
+ * @param {...any} args - The arguments to pass to the contract function.
+ * @returns {Promise<Transaction>} The prepared transaction.
  */
 export async function buildContractTx(sourcePublicKey, contractId, method, ...args) {
   const account = await server.getAccount(sourcePublicKey);
