@@ -234,51 +234,45 @@ We prioritize the safety of our users and their funds.
 
 ---
 
-## 🌟 Verified Testnet Users & Feedback
+## 🥋 Level 5: User Feedback & Improvements
 
-We've successfully tested the platform on the Stellar Testnet with multiple users who provided a **5/5 overall experience rating**! 
+We have onboarded 5 unique users to test the platform on the Stellar Testnet. Their feedback has been instrumental in refining the user experience.
 
-**Key highlights from our 30+ verified testnet participants:**
-- Praise for the **ease of creating campaigns & funding projects**.
-- Appreciation for the **seamless integration with Freighter**.
-- High marks for the **security and transparency** of the platform.
-- Love for the premium **User Interface & Design**.
+### 📋 Feedback Collection
+- **[Google Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSeSQ25LXJ1-Dd-KMYaGcSi95XCQh1zF6M6Y45W2_5sBCMFqEA/viewform)**
+- **[Feedback Response Sheet](https://docs.google.com/spreadsheets/d/1OC0gqs_7MGlIUn_HQD3mRmTzFBG1OEZbmgY3XOQ5rsc/edit?usp=sharing)**
 
-[📊 View the raw user feedback and testnet verification here](https://docs.google.com/spreadsheets/d/1FnipA4BZrLnwiIm9xticozmAsi24sTWtKkvL9ZkW8qI/edit?usp=sharing)
-[🐦 View our Community Post on Twitter/X](https://x.com/Sayandeep2026/status/2049418042829074461?s=20)
+### Table 1: Onboarded Users
+| User Name | User Email | User Wallet Address |
+|-----------|------------|---------------------|
+| Sayandeep Saha | sayandeep.saha.arcade25@gmail.com | `GA3UD3SA7RAG3TYSPZCOOHTABK7GXMHQ2IYZ5M5OXRITQZFEZAAAOW4B` |
+| Vansh Deo | vanshdeo2005@gmail.com | `GCYHWL24BISQHL2ODGSPJUJHMXUKXT5UCCZRXFUNC7SIZTVENE752VVJ` |
+| Soujanya Mallick | soujanyamallick199@gmail.com | `GAODT4TCZBVPDRVNOVNGDGGSF4LTTO7EIXW56632KL6ZNV5LPVN3ITKU` |
+| Sayan Chatterjee | chatterjeesayan1009@gmail.com | `GAOROSU2N36UHKB6WQVE7GHTFMDH2FH62OGEXRH7YH6RJ5R4GZHDBTLG` |
+| Arijit Dutta | arijit.dutta6022@gmail.com | `GDFNZCMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL` |
 
-**🏆 Verified Testnet Addresses (30+):**
-- `GAOROSU2N36UHKB6WQVE7GHTFMDH2FH62OGEXRH7YH6RJ5R4GZHDBTLG`
-- `GCPBPHMV4ITVABMXRYJLXF2UVSPUPAHEV47345OMY7WX625SU7QJPFOW`
-- `GCTR3T4QKW4APUEKU2U6V32J7JCJOM2YHJZYCOV2XTE3E7YTRRRY2AOS`
-- `GA3UD3SA7RAG3TYSPZCOOHTABK7GXMHQ2IYZ5M5OXRITQZFEZAAAOW4B`
-- `GCBCZQYLIENVZGCGYZ3I7LTFIZDEAFGLV2BLBAPVYPPHV2XPCF5URS3Z`
-- `GDFNZCMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL`
-- `GCPBPHMV4ITVABMXRYJLXFZUVSPUPAHEV473450MY7WX625SU7QJPFOW`
-- `GCUMAPN3QCOVWGPSIYW2J3TI3TLVUJ36JFSJSXZ5PUEWFPDAL72AEMYY`
-- `GA4NAGVEH6PBKPJ73ZM2ZREIP2XBH75BZEP5MTZPOTWNP626WWXZPYZP`
-- `GBUE5PXGLCUMRHNOD4QGTYQ6YVA7FDPVM5Q7ES6G57TBYYW6ROYGWF3C`
-- `GDXYGFVWN773LQ7IU337Z2ZM6UTRMBR64GZW4LQW3D4O6TDG3ESH6OLL`
-- `GAOAOKPRRGHSDK3RSW6GRLMRM3SPCFKVWGNOBZZ335ALOXG7F77VNU6P`
-- `GBSE23OSXISTSEIQ5KD6H25SDWLG5RSMCZZH5B7ONBN4NB26KCGOCPX5`
-- `GDUFAQ3SYIADX7VA2X4AKKEORY6CXF2C76PZMOAIQ34VSZW2HRBO5IKZ`
-- `GDFN2CMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL`
-- `GBF4TVMSZHNV5HJUGX37FMRHGFJA4P2HXY5PVCSZN6OJ6W6K6IULJZAV`
-- `GATY3WFEUFUV3A4GGAXMB7TVOWX7HVLPO7ZJBTS7DOCEO76ZQGSMU4RE`
-- `GC3ICBUWOXJ3DBIOSUF7DNEVGKJR3S5HNEPADMY2SFLJRJUIZGGAESFN`
-- `GCQMXVJICV2UOEOYLPHUD77QAGMID6RBI2AO456J45J2EGIRCPKJ5E67`
-- `GABJRWDKBTHWFEADEZQOHF2UBJVZUKA34SQNZZYJTSGNCLY3DHHBKOX2`
-- `GBZTHT6MWSP2R4TN5ERELIHDOEZXTCT45RMXYUZCBROGO5SKIZVRRKGG`
-- `GCYRJLMUWPRFCKWIW5IBLVZIDJUL4QYSAWHVAVDUNROOKQAU2LZV4UPZ`
-- `GATVVVHEMN4EC6YOLVZTS7UHH3HFHZB2JFD2W7UBFLDMRXFO6J4PRS2E`
-- `GAXVFRFT3YBPZSPRDSEQB4HQXIJSHUQWGYOEA6FNDHO7OJMF3ASJI6F6`
-- `GCVODJ7V2YQQQL7HCWN5GOWEQQ5FIGTFOZ2RBVTM4UI6T6LADYC43WRI`
-- `GBPS6G76OZ5Y5ULVUH3QB4E4QNTDR5GKRA6EFJMCQZJQUHH7DEXKRQFW`
-- `GCPPRF5TIVF5NQCY6JHUJVDAABQLP23HQRJWC77YJTFMVLTJ5HDOWHJ4`
-- `GCBNQXHWMUHFHTZXS2DZXQVF7VXZ6UUAACTLFHUIZT3SLTNAMBLC4K3O`
-- `GAOJKL4Y4J35OTTDN4WXFBNMCAJ5XGVBM4QWGJ7D6EBEQMASOPZE4TPG`
-- `GBJTCD3PGUWKGMZSCDUTWMJQM3KE2DDLPXVDWQUTWA73BMQ2O275NOK6`
-- `GAODT4TCZBVPDRVNOVNGDGGSF4LTTO7EIXW56632KL6ZNV5LPVN3ITKU`
+### Table 2: User Feedback Implementation
+| User Name | User Email | User Wallet Address | User Feedback | Commit ID |
+|-----------|------------|---------------------|---------------|-----------|
+| Sayandeep Saha | sayandeep.saha.arcade25@gmail.com | `GA3UD3SA7RAG3TYSPZCOOHTABK7GXMHQ2IYZ5M5OXRITQZFEZAAAOW4B` | "I want to see my contribution amount clearly on the campaign cards." | [`eddc68f`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6) |
+| Vansh Deo | vanshdeo2005@gmail.com | `GCYHWL24BISQHL2ODGSPJUJHMXUKXT5UCCZRXFUNC7SIZTVENE752VVJ` | "I want to share campaigns with my community on Twitter." | [`747176c`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/747176c9ebb08655ef629f4c245a52a3bfd9813d) |
+| Soujanya Mallick | soujanyamallick199@gmail.com | `GAODT4TCZBVPDRVNOVNGDGGSF4LTTO7EIXW56632KL6ZNV5LPVN3ITKU` | "The 'My Activity' page should show how much I specifically contributed." | [`6ec3c69`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/6ec3c69a3285a0c4f4c96db6b545f5af45d8c8a7) |
+| Sayan Chatterjee | chatterjeesayan1009@gmail.com | `GAOROSU2N36UHKB6WQVE7GHTFMDH2FH62OGEXRH7YH6RJ5R4GZHDBTLG` | "The UI is good, but the time labels are too generic. It needs specific 'Ended' or 'Expired' tags." | [`eddc68f`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6) |
+| Arijit Dutta | arijit.dutta6022@gmail.com | `GDFNZCMIIP7RUGI3TWVFOKKI3S3CPLP4AR6IJ4RUAETG36AEIEWUWUNL` | "It's hard to tell which campaigns are almost finished at a glance." | [`eddc68f`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6) |
+
+---
+
+## 🛠️ Separated Issue Resolution Commits
+
+Each improvement requested by our testnet users was implemented in isolated, descriptive commits to ensure clean version history and easy verification.
+
+- **Issue #1: Contribution Visibility** (Sayandeep Saha) -> Committed in [`eddc68f21ab`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6)
+- **Issue #2: Social Sharing Integration** (Vansh Deo) -> Committed in [`747176c9ebb`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/747176c9ebb08655ef629f4c245a52a3bfd9813d)
+- **Issue #3: Specific Activity Tracking** (Soujanya Mallick) -> Committed in [`6ec3c69a328`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/6ec3c69a3285a0c4f4c96db6b545f5af45d8c8a7)
+- **Issue #4: Descriptive Status Labels** (Sayan Chatterjee) -> Committed in [`eddc68f21ab`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6)
+- **Issue #5: Visual Progress Cues** (Arijit Dutta) -> Committed in [`eddc68f21ab`](https://github.com/Sayandeep-the-coder/StellarCrowdfund/commit/eddc68f21ab15f3143882b79bfe86b86065a13f6)
+
+---
 
 ---
 
