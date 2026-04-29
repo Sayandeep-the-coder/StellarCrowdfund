@@ -14,8 +14,13 @@ import {
 const CROWDFUNDING_CONTRACT_ID = import.meta.env.VITE_CROWDFUNDING_CONTRACT_ID || '';
 const TOKEN_CONTRACT_ID = import.meta.env.VITE_TOKEN_CONTRACT_ID || '';
 
-// ── Helper: sign + submit a built transaction ────────────────────────────────
-
+/**
+ * Helper: sign + submit a built transaction.
+ * Handles XDR serialization and integration with Freighter.
+ * 
+ * @param {Transaction} tx - The transaction object to sign and submit.
+ * @returns {Promise<object>} The result of the transaction submission.
+ */
 async function signAndSubmit(tx) {
   // Get base64 XDR - try multiple approaches for SDK compatibility
   let xdrString;
