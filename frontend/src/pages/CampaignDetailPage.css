@@ -215,6 +215,18 @@
   flex-wrap: wrap;
 }
 
+.detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-share-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
 /* Action Banners */
 .action-banner {
   display: flex;
@@ -237,9 +249,47 @@
   margin: 0;
 }
 
-.action-banner--success {
-  background: rgba(16, 185, 129, 0.06);
-  border: 1px solid rgba(16, 185, 129, 0.15);
+.action-banner--withdraw-ready {
+  background: rgba(var(--accent-bright-rgb), 0.1);
+  border: 2px solid var(--accent-bright);
+  box-shadow: 0 0 20px rgba(var(--accent-bright-rgb), 0.2);
+}
+
+.withdraw-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.withdraw-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 5px var(--accent-bright));
+}
+
+.withdraw-text h3 {
+  color: var(--accent-bright);
+  font-size: 1.25rem;
+}
+
+.btn-withdraw-glow {
+  box-shadow: 0 0 15px var(--accent-bright);
+  transform: scale(1.05);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-withdraw-glow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--accent-bright);
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite;
+}
+
+@keyframes pulseSubtle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
 }
 
 .action-banner--withdrawn {

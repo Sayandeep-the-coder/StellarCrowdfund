@@ -121,10 +121,15 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
     Failed: 'badge-failed',
   }[status] || 'badge-active';
 
-  const handleShare = () => {
+  const handleShare = (platform) => {
     const text = encodeURIComponent(`Check out this crowdfunding campaign on Stellar: ${campaign.title}! 🚀 #Stellar #Soroban`);
     const url = encodeURIComponent(window.location.href);
-    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    
+    if (platform === 'twitter') {
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    } else if (platform === 'whatsapp') {
+      window.open(`https://api.whatsapp.com/send?text=${text}%20${url}`, '_blank');
+    }
   };
 
   return (
@@ -133,9 +138,14 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
         <button className="btn btn-ghost btn-sm detail-back" onClick={onBack} id="btn-back">
           ← Back to Campaigns
         </button>
-        <button className="btn btn-ghost btn-sm detail-share" onClick={handleShare}>
-          📤 Share
-        </button>
+        <div className="detail-share-group">
+          <button className="btn btn-ghost btn-sm detail-share" onClick={() => handleShare('twitter')}>
+            🐦 Twitter
+          </button>
+          <button className="btn btn-ghost btn-sm detail-share" onClick={() => handleShare('whatsapp')}>
+            📱 WhatsApp
+          </button>
+        </div>
       </div>
 
       <div className="detail-card glass-card">
@@ -251,18 +261,21 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
 
           {/* Withdraw */}
           {isOwner && isSuccess && isEnded && !campaign.withdrawn && (
-            <div className="action-banner action-banner--success">
-              <div>
-                <h3>🎉 Campaign Successful!</h3>
-                <p>Your campaign met its goal. You can now withdraw the raised funds.</p>
+            <div className="action-banner action-banner--withdraw-ready animate-pulse-subtle">
+              <div className="withdraw-content">
+                <div className="withdraw-icon">🏆</div>
+                <div className="withdraw-text">
+                  <h3>Withdraw Your Funds</h3>
+                  <p>Congratulations! Your campaign goal has been met. You can now claim the raised funds to your wallet.</p>
+                </div>
               </div>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary btn-lg btn-withdraw-glow"
                 onClick={handleWithdraw}
                 disabled={submitting}
                 id="btn-withdraw"
               >
-                Withdraw {campaign.raised.toFixed(1)} tokens
+                {submitting ? <span className="spinner" /> : '💰'} Withdraw {campaign.raised.toFixed(1)} FUND
               </button>
             </div>
           )}

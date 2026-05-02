@@ -6,6 +6,10 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
   const status = String(campaign.status || 'Active');
   const progress = goal > 0 ? Math.min((raised / goal) * 100, 100) : 0;
 
+  const XLM_TO_USD = 0.15; // Mock conversion rate
+  const raisedUSD = (raised * XLM_TO_USD).toFixed(2);
+  const goalUSD = (goal * XLM_TO_USD).toFixed(2);
+
   const getTimeRemaining = () => {
     if (status === 'Success') return '🎯 Goal Reached';
     if (status === 'Failed') return '❌ Goal Not Met';
@@ -13,7 +17,7 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
 
     const now = Date.now() / 1000;
     const diff = deadline - now;
-    if (diff <= 0) return 'Ended';
+    if (diff <= 0) return '🏁 Ended';
     const days = Math.floor(diff / 86400);
     const hours = Math.floor((diff % 86400) / 3600);
     if (days > 0) return `${days}d ${hours}h left`;
@@ -29,6 +33,14 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
   }[status] || 'badge-active';
 
   const isActive = status === 'Active' && (Date.now() / 1000) < deadline;
+
+  // Dynamic progress bar color
+  const getProgressColor = () => {
+    if (progress >= 100) return 'var(--color-success)';
+    if (progress >= 75) return 'var(--accent-cyan)';
+    if (progress >= 50) return 'var(--accent-bright)';
+    return 'var(--accent-dim)';
+  };
 
   return (
     <div className={`campaign-card glass-card ${progress >= 90 && isActive ? 'card-pulse' : ''}`} id={`campaign-card-${id}`}>
@@ -57,16 +69,29 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
         {/* Progress */}
         <div className="card-progress-section">
           <div className="progress-track">
-            <div className="progress-fill" style={{ width: `${progress}%` }} />
+            <div 
+              className="progress-fill" 
+              style={{ 
+                width: `${progress}%`,
+                background: getProgressColor(),
+                boxShadow: `0 0 10px ${getProgressColor()}44`
+              }} 
+            />
           </div>
           <div className="card-stats-row">
             <div className="card-stat">
-              <span className="card-stat-value">{raised.toFixed(1)}</span>
-              <span className="card-stat-label">raised</span>
+              <div className="card-stat-value-group">
+                <span className="card-stat-value">{raised.toFixed(1)}</span>
+                <span className="card-stat-label">raised</span>
+              </div>
+              <span className="card-stat-usd">(${raisedUSD})</span>
             </div>
             <div className="card-stat card-stat--right">
-              <span className="card-stat-value">{goal.toFixed(1)}</span>
-              <span className="card-stat-label">goal</span>
+              <div className="card-stat-value-group">
+                <span className="card-stat-value">{goal.toFixed(1)}</span>
+                <span className="card-stat-label">goal</span>
+              </div>
+              <span className="card-stat-usd">(${goalUSD})</span>
             </div>
           </div>
         </div>

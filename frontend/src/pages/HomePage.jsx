@@ -12,6 +12,8 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
   const [fundTarget, setFundTarget] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const [searchQuery, setSearchQuery] = useState('');
+
   const fetchCampaigns = useCallback(async () => {
     setLoading(true);
     try {
@@ -65,9 +67,12 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
     }
   };
 
-  const filtered = filter === 'all'
-    ? campaigns
-    : campaigns.filter((c) => String(c.status) === filter);
+  const filtered = campaigns.filter((c) => {
+    const matchesFilter = filter === 'all' || String(c.status) === filter;
+    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          c.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
 
   const stats = {
     total: campaigns.length,
@@ -88,6 +93,16 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
         <div className="explore-header">
           <h2>Explore Campaigns</h2>
           <div className="explore-controls">
+            <div className="search-bar-wrapper">
+              <span className="search-icon">🔍</span>
+              <input 
+                type="text" 
+                placeholder="Search campaigns..." 
+                className="search-input"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
             <div className="filter-pills">
               {['all', 'Active', 'Success', 'Failed'].map((f) => (
                 <button
@@ -100,7 +115,7 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
               ))}
             </div>
             <button className="btn btn-ghost btn-sm" onClick={fetchCampaigns} disabled={loading} id="btn-refresh">
-              {loading ? <span className="spinner" /> : '↻'} Refresh
+              {loading ? <span className="spinner" /> : '↻'}
             </button>
           </div>
         </div>

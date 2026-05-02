@@ -42,7 +42,7 @@ export function useToast() {
       if (timersRef.current[id]) clearTimeout(timersRef.current[id]);
       timersRef.current[id] = setTimeout(() => {
         dismiss(id);
-      }, 4000);
+      }, 8000);
     }
   }, [dismiss]);
 

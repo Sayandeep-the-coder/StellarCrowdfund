@@ -106,17 +106,25 @@
 
 .card-stat {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+
+.card-stat--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.card-stat-value-group {
+  display: flex;
   align-items: baseline;
   gap: 0.3rem;
 }
 
-.card-stat--right {
-  text-align: right;
-}
-
 .card-stat-value {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -126,6 +134,14 @@
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.card-stat-usd {
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  opacity: 0.8;
+  font-weight: 500;
 }
 
 /* Footer */
