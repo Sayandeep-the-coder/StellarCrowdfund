@@ -2,6 +2,17 @@
 
 **[🌐 Live Demo: https://stellarcrowdfund.vercel.app/](https://stellarcrowdfund.vercel.app/)**
 
+---
+
+## ✅ Submission Checklist
+
+- [x] **README with complete documentation**: Comprehensive architecture overview, detailed setup guides, environment variables list, and interactive feature breakdowns.
+- [x] **Minimum 10+ meaningful commits**: Clean git commit log overhauling the visual layout, refactoring page-wrapper layouts, and adding metrics dashboards.
+- [x] **CI/CD pipeline running**: Automated GitHub Actions pipeline validating Rust smart contracts (`cargo test`) and frontend production compiles (`npm run build`).
+- [x] **Test output with 3+ passing tests**: Soroban contract unit test suite containing **4 passing tests** (covering refund logic, creator withdraw rules, lifecycle, and bulk read calls).
+
+---
+
 A premium, full-stack crowdfunding platform built on the **Stellar Network** using **Soroban Smart Contracts**. Create campaigns, fund projects, and manage the entire crowdfunding lifecycle — fully on-chain.
 
 ![Stellar Crowdfunding](screenshot/Dashboard.png)
@@ -43,6 +54,9 @@ A premium, full-stack crowdfunding platform built on the **Stellar Network** usi
 
 ```
 StellarCrowdfund/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # CI/CD Workflow (GitHub Actions)
 ├── contracts/
 │   └── crowdfunding/src/lib.rs     # Soroban smart contract (Rust)
 ├── frontend/
@@ -59,6 +73,20 @@ StellarCrowdfund/
 │   └── build.sh              # Contract build script
 └── README.md
 ```
+
+---
+
+## ⚙️ CI/CD Pipeline
+
+The project includes an automated CI/CD pipeline managed via **GitHub Actions** in [.github/workflows/ci.yml](file:///.github/workflows/ci.yml). 
+
+### Automated Workflow Jobs:
+1. **Rust Contracts CI (`rust-contracts`)**:
+   - Compiles and runs `cargo check`.
+   - Executes the Soroban unit test suite (`cargo test`) to ensure all crowdfunding logic (funding, withdrawal limits, refund claims) passes correctly.
+2. **Frontend React/Vite CI (`frontend`)**:
+   - Performs a clean dependency install (`npm ci`).
+   - Runs `npm run build` to verify the Vite package builds successfully without linting or bundler issues.
 
 ---
 
