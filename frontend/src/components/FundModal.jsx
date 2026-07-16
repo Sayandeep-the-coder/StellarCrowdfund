@@ -23,7 +23,6 @@ export default function FundModal({ campaign, onFund, onClose, submitting }) {
 
         {/* Header */}
         <div className="fund-modal-header">
-          <span className="fund-modal-emoji">💎</span>
           <h2>Fund this Project</h2>
           <p className="fund-modal-campaign-title">{campaign.title}</p>
         </div>
@@ -79,14 +78,14 @@ export default function FundModal({ campaign, onFund, onClose, submitting }) {
           {/* Submit */}
           <button
             type="submit"
-            className="btn btn-secondary btn-lg fund-modal-submit"
+            className="btn btn-primary btn-lg fund-modal-submit"
             disabled={submitting || !amount || parseFloat(amount) <= 0}
             id="btn-submit-fund"
           >
             {submitting ? (
               <><span className="spinner" /> Processing…</>
             ) : (
-              <>💎 Fund {amount || '0'} Tokens</>
+              <>Fund {amount || '0'} Tokens</>
             )}
           </button>
 

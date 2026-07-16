@@ -137,17 +137,73 @@ export default function App() {
         onNavigate={navigate}
       />
 
-      <main className="page-wrapper">
+      <main className="app-main">
         {renderPage()}
       </main>
 
       <footer className="app-footer">
-        <p>© 2026 StellarCrowdfund · Powered by Soroban Smart Contracts</p>
-        <p>
-          <a href="https://stellar.org" target="_blank" rel="noopener noreferrer">Stellar</a>
-          {' · '}
-          <a href="https://www.freighter.app/" target="_blank" rel="noopener noreferrer">Freighter Wallet</a>
-        </p>
+        <div className="container-centered">
+          <div className="footer-grid">
+            <div className="footer-brand">
+              <span className="footer-brand-title">StellarCrowdfund</span>
+              <p className="footer-brand-tagline">
+                Decentralized crowdfunding built with institutional precision on Stellar and Soroban.
+              </p>
+            </div>
+            <div className="footer-column">
+              <h4>Platform</h4>
+              <ul>
+                <li><button className="btn-ghost text-link" style={{padding:0, textAlign:'left'}} onClick={() => navigate('home')}>Explore</button></li>
+                <li><button className="btn-ghost text-link" style={{padding:0, textAlign:'left'}} onClick={() => navigate('metrics')}>Metrics</button></li>
+                <li><button className="btn-ghost text-link" style={{padding:0, textAlign:'left'}} onClick={() => navigate('create')}>Create Campaign</button></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Solutions</h4>
+              <ul>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Public Goods</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Creators</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Web3 Ventures</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Non-Profits</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="https://stellar.org" target="_blank" rel="noopener noreferrer">Stellar Network</a></li>
+                <li><a href="https://www.freighter.app/" target="_blank" rel="noopener noreferrer">Freighter SDK</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>API Reference</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Status</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Learn</h4>
+              <ul>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Guides</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Smart Contracts</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Stellar 101</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>F.A.Q.</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>About Us</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Careers</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Terms of Service</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            <span>© 2026 StellarCrowdfund. Powered by Soroban Smart Contracts.</span>
+            <div className="footer-legal-links">
+              <a href="https://stellar.org" target="_blank" rel="noopener noreferrer">Stellar Network</a>
+              <a href="https://www.freighter.app/" target="_blank" rel="noopener noreferrer">Freighter Wallet</a>
+            </div>
+          </div>
+        </div>
       </footer>
 
       <ToastContainer toasts={toasts} onDismiss={dismiss} />

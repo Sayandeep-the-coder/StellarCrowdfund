@@ -75,7 +75,7 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
 
   if (loading) {
     return (
-      <div className="detail-page animate-fade-in">
+      <div className="detail-page page-wrapper animate-fade-in">
         <button className="btn btn-ghost btn-sm" onClick={onBack}>← Back</button>
         <div className="detail-loading">
           <span className="spinner spinner-lg" />
@@ -87,7 +87,7 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
 
   if (!campaign) {
     return (
-      <div className="detail-page animate-fade-in">
+      <div className="detail-page page-wrapper animate-fade-in">
         <button className="btn btn-ghost btn-sm" onClick={onBack}>← Back</button>
         <div className="empty-state">
           <span className="empty-state-icon">🔍</span>
@@ -133,17 +133,17 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
   };
 
   return (
-    <div className="detail-page animate-fade-in">
+    <div className="detail-page page-wrapper animate-fade-in">
       <div className="detail-nav">
         <button className="btn btn-ghost btn-sm detail-back" onClick={onBack} id="btn-back">
           ← Back to Campaigns
         </button>
         <div className="detail-share-group">
           <button className="btn btn-ghost btn-sm detail-share" onClick={() => handleShare('twitter')}>
-            🐦 Twitter
+            Twitter
           </button>
           <button className="btn btn-ghost btn-sm detail-share" onClick={() => handleShare('whatsapp')}>
-            📱 WhatsApp
+            WhatsApp
           </button>
         </div>
       </div>
@@ -246,7 +246,7 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
                   disabled={submitting || !fundingAmount}
                   id="btn-fund"
                 >
-                  {submitting ? <span className="spinner" /> : '💎'} Fund Project
+                  {submitting ? <span className="spinner" /> : ''} Fund Project
                 </button>
               </div>
               <div className="fund-presets">
@@ -261,21 +261,20 @@ export default function CampaignDetailPage({ publicKey, campaignId, onBack, onTo
 
           {/* Withdraw */}
           {isOwner && isSuccess && isEnded && !campaign.withdrawn && (
-            <div className="action-banner action-banner--withdraw-ready animate-pulse-subtle">
+            <div className="action-banner action-banner--withdraw-ready">
               <div className="withdraw-content">
-                <div className="withdraw-icon">🏆</div>
                 <div className="withdraw-text">
                   <h3>Withdraw Your Funds</h3>
                   <p>Congratulations! Your campaign goal has been met. You can now claim the raised funds to your wallet.</p>
                 </div>
               </div>
               <button
-                className="btn btn-primary btn-lg btn-withdraw-glow"
+                className="btn btn-secondary-on-dark btn-lg"
                 onClick={handleWithdraw}
                 disabled={submitting}
                 id="btn-withdraw"
               >
-                {submitting ? <span className="spinner" /> : '💰'} Withdraw {campaign.raised.toFixed(1)} FUND
+                {submitting ? <span className="spinner" /> : ''} Withdraw {campaign.raised.toFixed(1)} tokens
               </button>
             </div>
           )}

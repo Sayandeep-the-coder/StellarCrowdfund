@@ -5,12 +5,10 @@ export default function HeroSection({ publicKey, onNavigate, stats }) {
     <section className="hero" id="hero-section">
       <div className="hero-content">
         <div className="hero-badge">
-          <span className="hero-badge-dot" />
           Built on Stellar & Soroban
         </div>
         <h1 className="hero-title">
-          Fund the <span className="gradient-text">Future</span> with
-          <br />Blockchain Crowdfunding
+          Fund the Future with Blockchain Crowdfunding
         </h1>
         <p className="hero-subtitle">
           Launch your project on Stellar. Connect with a global network of backers.
@@ -19,7 +17,7 @@ export default function HeroSection({ publicKey, onNavigate, stats }) {
         <div className="hero-actions">
           {publicKey ? (
             <button className="btn btn-primary btn-lg" onClick={() => onNavigate('create')} id="btn-hero-create">
-              🚀 Start a Campaign
+              Start a Campaign
             </button>
           ) : (
             <button className="btn btn-primary btn-lg" disabled>
@@ -31,8 +29,8 @@ export default function HeroSection({ publicKey, onNavigate, stats }) {
           </button>
         </div>
 
-        {/* Stats */}
-        <div className="hero-stats">
+        {/* Stats formatted as an Airtable cream callout card */}
+        <div className="hero-stats cream-callout-card">
           <div className="hero-stat">
             <span className="hero-stat-value">{stats.total}</span>
             <span className="hero-stat-label">Campaigns</span>
@@ -49,11 +47,6 @@ export default function HeroSection({ publicKey, onNavigate, stats }) {
           </div>
         </div>
       </div>
-
-      {/* Floating orbs */}
-      <div className="hero-orb hero-orb--1" />
-      <div className="hero-orb hero-orb--2" />
-      <div className="hero-orb hero-orb--3" />
     </section>
   );
 }

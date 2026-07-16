@@ -49,9 +49,9 @@ export default function MyActivityPage({ publicKey, onSelectCampaign }) {
   const currentList = activeTab === 'created' ? created : funded;
 
   return (
-    <div className="activity-page animate-fade-in">
+    <div className="activity-page page-wrapper animate-fade-in">
       <div className="activity-header">
-        <h1>My <span className="gradient-text">Activity</span></h1>
+        <h1>My Activity</h1>
         <p className="activity-subtitle">
           Track the campaigns you've created and funded.
         </p>
@@ -64,7 +64,6 @@ export default function MyActivityPage({ publicKey, onSelectCampaign }) {
           onClick={() => setActiveTab('created')}
           id="tab-created"
         >
-          <span className="tab-icon">🏗️</span>
           Created by Me
           <span className="tab-count">{created.length}</span>
         </button>
@@ -73,7 +72,6 @@ export default function MyActivityPage({ publicKey, onSelectCampaign }) {
           onClick={() => setActiveTab('funded')}
           id="tab-funded"
         >
-          <span className="tab-icon">💰</span>
           Funded by Me
           <span className="tab-count">{funded.length}</span>
         </button>

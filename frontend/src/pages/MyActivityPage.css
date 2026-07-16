@@ -2,72 +2,78 @@
 
 .activity-page {
   max-width: var(--max-width);
+  padding: var(--spacing-xl) 0;
 }
 
 .activity-header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl);
 }
 
 .activity-header h1 {
-  margin-bottom: 0.5rem;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.01em;
 }
 
 .activity-subtitle {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
+  color: var(--color-body);
+  font-size: 14px;
 }
 
 /* Tabs */
 .activity-tabs {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-hairline);
 }
 
 .activity-tab {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 0.875rem 1.5rem;
+  gap: var(--spacing-xs);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px var(--spacing-sm);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted);
   cursor: pointer;
-  transition: all 0.2s var(--ease-out);
+  transition: all 0.2s;
 }
 
 .activity-tab:hover {
-  border-color: var(--border-hover);
-  color: var(--text-secondary);
+  color: var(--color-ink);
 }
 
 .activity-tab--active {
-  background: rgba(99, 102, 241, 0.08);
-  border-color: rgba(99, 102, 241, 0.25);
-  color: var(--accent-bright);
+  color: var(--color-ink);
+  border-bottom-color: var(--color-primary);
 }
 
 .tab-icon {
-  font-size: 1.1rem;
+  font-size: 14px;
 }
 
 .tab-count {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: var(--bg-surface-hover);
-  padding: 0.15rem 0.5rem;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  padding: 2px 6px;
   border-radius: var(--radius-full);
-  color: var(--text-dim);
+  color: var(--color-muted);
 }
 
 .activity-tab--active .tab-count {
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--accent-bright);
+  background: var(--color-surface-strong);
+  color: var(--color-ink);
+  border-color: var(--color-border-strong);
 }
 
 /* Loading */
@@ -75,9 +81,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 5rem 0;
-  color: var(--text-dim);
+  gap: var(--spacing-md);
+  padding: var(--spacing-section) 0;
+  color: var(--color-muted);
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
@@ -85,5 +91,19 @@
 @media (max-width: 768px) {
   .activity-tabs {
     flex-direction: column;
+    gap: 0;
+    border-bottom: none;
+  }
+  
+  .activity-tab {
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    padding: 10px 16px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .activity-tab--active {
+    border-left-color: var(--color-primary);
   }
 }

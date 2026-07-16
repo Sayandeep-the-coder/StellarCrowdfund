@@ -22,15 +22,9 @@ export default function Navbar({ publicKey, truncatedKey, connecting, onConnect,
         <button className="navbar-logo" onClick={() => onNavigate('home')} id="nav-logo">
           <div className="logo-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#grad1)" opacity="0.9"/>
-              <path d="M2 17L12 22L22 17" stroke="url(#grad1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="url(#grad1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-              <defs>
-                <linearGradient id="grad1" x1="2" y1="2" x2="22" y2="22">
-                  <stop stopColor="#a78bfa"/>
-                  <stop offset="1" stopColor="#06b6d4"/>
-                </linearGradient>
-              </defs>
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--color-primary)"/>
+              <path d="M2 17L12 22L22 17" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
             </svg>
           </div>
           <span className="logo-text">StellarCrowdfund</span>

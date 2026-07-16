@@ -38,9 +38,9 @@ export default function CreateCampaignPage({ publicKey, onSuccess, onToast }) {
   const isValid = form.title.trim() && form.description.trim() && parseFloat(form.goal) > 0 && parseInt(form.days) > 0;
 
   return (
-    <div className="create-page animate-fade-in">
+    <div className="create-page page-wrapper animate-fade-in">
       <div className="create-header">
-        <h1>Launch a <span className="gradient-text">Campaign</span></h1>
+        <h1>Launch a Campaign</h1>
         <p className="create-subtitle">
           Set your goal, define a timeline, and share your vision with backers around the world.
         </p>
@@ -162,7 +162,7 @@ export default function CreateCampaignPage({ publicKey, onSuccess, onToast }) {
             {submitting ? (
               <><span className="spinner" /> Creating…</>
             ) : (
-              '🚀 Launch Campaign'
+              'Launch Campaign'
             )}
           </button>
         </form>

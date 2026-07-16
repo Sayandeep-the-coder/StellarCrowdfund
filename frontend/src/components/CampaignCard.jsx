@@ -11,13 +11,13 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
   const goalUSD = (goal * XLM_TO_USD).toFixed(2);
 
   const getTimeRemaining = () => {
-    if (status === 'Success') return '🎯 Goal Reached';
-    if (status === 'Failed') return '❌ Goal Not Met';
-    if (status === 'Withdrawn') return '✅ Funds Withdrawn';
+    if (status === 'Success') return 'Goal Reached';
+    if (status === 'Failed') return 'Goal Not Met';
+    if (status === 'Withdrawn') return 'Funds Withdrawn';
 
     const now = Date.now() / 1000;
     const diff = deadline - now;
-    if (diff <= 0) return '🏁 Ended';
+    if (diff <= 0) return 'Ended';
     const days = Math.floor(diff / 86400);
     const hours = Math.floor((diff % 86400) / 3600);
     if (days > 0) return `${days}d ${hours}h left`;
@@ -29,21 +29,27 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
     Active: 'badge-active',
     Success: 'badge-success',
     Failed: 'badge-failed',
-    Withdrawn: 'badge-withdrawn',
+    Withdrawn: 'badge-success',
   }[status] || 'badge-active';
 
   const isActive = status === 'Active' && (Date.now() / 1000) < deadline;
 
-  // Dynamic progress bar color
-  const getProgressColor = () => {
-    if (progress >= 100) return 'var(--color-success)';
-    if (progress >= 75) return 'var(--accent-cyan)';
-    if (progress >= 50) return 'var(--accent-bright)';
-    return 'var(--accent-dim)';
+  // Distribute backgrounds sequentially to match Airtable's demo-grid style
+  const getCardBgClass = (cid) => {
+    const classes = ['card-peach', 'card-mint', 'card-cream', 'card-yellow'];
+    return classes[cid % classes.length];
+  };
+
+  // Distribute height classes to make heights uneven
+  const getCardHeightClass = (cid) => {
+    return cid % 3 === 0 ? 'card-tall' : cid % 3 === 1 ? 'card-medium' : 'card-short';
   };
 
   return (
-    <div className={`campaign-card glass-card ${progress >= 90 && isActive ? 'card-pulse' : ''}`} id={`campaign-card-${id}`}>
+    <div 
+      className={`campaign-card ${getCardBgClass(id)} ${getCardHeightClass(id)}`} 
+      id={`campaign-card-${id}`}
+    >
       {/* Clickable area for navigation */}
       <div className="card-clickable" onClick={() => onClick(id)}>
         {/* Card Header */}
@@ -58,7 +64,7 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
           
           {userContribution > 0 && (
             <div className="user-contribution-badge">
-              💎 You funded {userContribution.toFixed(1)} FUND
+              💎 Funded {userContribution.toFixed(1)} tokens
             </div>
           )}
 
@@ -71,11 +77,7 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
           <div className="progress-track">
             <div 
               className="progress-fill" 
-              style={{ 
-                width: `${progress}%`,
-                background: getProgressColor(),
-                boxShadow: `0 0 10px ${getProgressColor()}44`
-              }} 
+              style={{ width: `${progress}%` }} 
             />
           </div>
           <div className="card-stats-row">
@@ -103,15 +105,15 @@ export default function CampaignCard({ campaign, onClick, onFund, publicKey, use
         <div className="card-actions">
           {isActive && publicKey && onFund && (
             <button
-              className="btn btn-secondary btn-sm"
+              className="btn btn-pricing-pill btn-sm"
               onClick={(e) => { e.stopPropagation(); onFund(campaign); }}
               id={`btn-fund-card-${id}`}
             >
-              💎 Fund
+              Fund
             </button>
           )}
           <button
-            className="btn btn-ghost btn-sm"
+            className="btn btn-ghost btn-sm card-view-link"
             onClick={() => onClick(id)}
           >
             Details →

@@ -88,70 +88,101 @@ export default function HomePage({ publicKey, onSelectCampaign, onNavigate, onTo
         stats={stats} 
       />
 
-      {/* Explore Section */}
-      <section id="explore" className="explore-section">
-        <div className="explore-header">
-          <h2>Explore Campaigns</h2>
-          <div className="explore-controls">
-            <div className="search-bar-wrapper">
-              <span className="search-icon">🔍</span>
-              <input 
-                type="text" 
-                placeholder="Search campaigns..." 
-                className="search-input"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            <div className="filter-pills">
-              {['all', 'Active', 'Success', 'Failed'].map((f) => (
-                <button
-                  key={f}
-                  className={`filter-pill ${filter === f ? 'filter-pill--active' : ''}`}
-                  onClick={() => setFilter(f)}
-                >
-                  {f === 'all' ? 'All' : f}
-                </button>
-              ))}
-            </div>
-            <button className="btn btn-ghost btn-sm" onClick={fetchCampaigns} disabled={loading} id="btn-refresh">
-              {loading ? <span className="spinner" /> : '↻'}
+      {/* Coral Signature Card */}
+      <section className="signature-band">
+        <div className="container-centered">
+          <div className="signature-coral-card">
+            <h2>Production crowdfunding at prototype speed</h2>
+            <p>
+              Deploy secure, Soroban-powered crowdfunding campaigns in minutes. 
+              StellarCrowdfund bridges the gap between visionaries and backers with institutional precision.
+            </p>
+            <button className="btn btn-secondary-on-dark" onClick={() => onNavigate('create')} id="btn-coral-create">
+              Start a Campaign
             </button>
           </div>
         </div>
+      </section>
 
-        {loading ? (
-          <div className="campaign-grid">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="glass-card skeleton-card">
-                <div className="skeleton" style={{ height: 16, width: '40%' }} />
-                <div className="skeleton" style={{ height: 20, width: '80%', marginTop: 12 }} />
-                <div className="skeleton" style={{ height: 14, width: '60%', marginTop: 8 }} />
-                <div className="skeleton" style={{ height: 8, width: '100%', marginTop: 20 }} />
-                <div className="skeleton" style={{ height: 14, width: '50%', marginTop: 12 }} />
+      {/* Explore Section */}
+      <section id="explore" className="explore-section">
+        <div className="container-centered">
+          <div className="explore-header">
+            <h2>Explore Campaigns</h2>
+            <div className="explore-controls">
+              <div className="search-bar-wrapper">
+                <span className="search-icon">🔍</span>
+                <input 
+                  type="text" 
+                  placeholder="Search campaigns..." 
+                  className="search-input"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
-            ))}
+              <div className="filter-pills">
+                {['all', 'Active', 'Success', 'Failed'].map((f) => (
+                  <button
+                    key={f}
+                    className={`filter-pill ${filter === f ? 'filter-pill--active' : ''}`}
+                    onClick={() => setFilter(f)}
+                  >
+                    {f === 'all' ? 'All' : f}
+                  </button>
+                ))}
+              </div>
+              <button className="btn btn-ghost btn-sm" onClick={fetchCampaigns} disabled={loading} id="btn-refresh">
+                {loading ? <span className="spinner" /> : '↻'}
+              </button>
+            </div>
           </div>
-        ) : filtered.length === 0 ? (
-          <div className="empty-state">
-            <span className="empty-state-icon">🌌</span>
-            <h3>No campaigns found</h3>
-            <p>Be the first to launch a project on-chain!</p>
+
+          {loading ? (
+            <div className="campaign-grid">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="glass-card skeleton-card">
+                  <div className="skeleton" style={{ height: 16, width: '40%' }} />
+                  <div className="skeleton" style={{ height: 20, width: '80%', marginTop: 12 }} />
+                  <div className="skeleton" style={{ height: 14, width: '60%', marginTop: 8 }} />
+                  <div className="skeleton" style={{ height: 8, width: '100%', marginTop: 20 }} />
+                  <div className="skeleton" style={{ height: 14, width: '50%', marginTop: 12 }} />
+                </div>
+              ))}
+            </div>
+          ) : filtered.length === 0 ? (
+            <div className="empty-state">
+              <span className="empty-state-icon">🌌</span>
+              <h3>No campaigns found</h3>
+              <p>Be the first to launch a project on-chain!</p>
+            </div>
+          ) : (
+            <div className="campaign-grid">
+              {filtered.map((campaign) => (
+                <CampaignCard
+                  key={campaign.id}
+                  campaign={campaign}
+                  userContribution={campaign.userContribution}
+                  onClick={onSelectCampaign}
+                  onFund={(c) => setFundTarget(c)}
+                  publicKey={publicKey}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Light Gray CTA Banner */}
+      <section className="cta-band-section">
+        <div className="container-centered">
+          <div className="cta-band-light">
+            <h2>Start building with StellarCrowdfund</h2>
+            <p>Join a decentralized ecosystem of creators and global backers today.</p>
+            <button className="btn btn-primary" onClick={() => onNavigate('create')} id="btn-cta-band-create">
+              Launch Your Campaign
+            </button>
           </div>
-        ) : (
-          <div className="campaign-grid">
-            {filtered.map((campaign) => (
-              <CampaignCard
-                key={campaign.id}
-                campaign={campaign}
-                userContribution={campaign.userContribution}
-                onClick={onSelectCampaign}
-                onFund={(c) => setFundTarget(c)}
-                publicKey={publicKey}
-              />
-            ))}
-          </div>
-        )}
+        </div>
       </section>
 
       {/* Fund Modal */}

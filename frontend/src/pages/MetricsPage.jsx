@@ -47,12 +47,12 @@ export default function MetricsPage({ publicKey }) {
     { service: 'System Health', status: 'Healthy', indicator: 'green' },
   ];
 
-  if (loading) return <div className="metrics-page loading">Loading Platform Metrics...</div>;
+  if (loading) return <div className="metrics-page page-wrapper loading">Loading Platform Metrics...</div>;
 
   return (
-    <div className="metrics-page animate-fade-in">
+    <div className="metrics-page page-wrapper animate-fade-in">
       <header className="metrics-header">
-        <h1 className="gradient-text">Platform Metrics & Status</h1>
+        <h1>Platform Metrics & Status</h1>
         <p>Real-time overview of the StellarCrowdfund ecosystem.</p>
       </header>
 
@@ -67,7 +67,7 @@ export default function MetricsPage({ publicKey }) {
       <div className="status-sections">
         {/* Security Checklist */}
         <section className="status-section glass-card">
-          <h3>🛡️ Security Checklist</h3>
+          <h3>Security Checklist</h3>
           <div className="status-list">
             {securityChecklist.map((item, i) => (
               <div key={i} className="status-item">
@@ -80,7 +80,7 @@ export default function MetricsPage({ publicKey }) {
 
         {/* Monitoring Dashboard */}
         <section className="status-section glass-card">
-          <h3>🖥️ Monitoring & Indexing</h3>
+          <h3>Monitoring & Indexing</h3>
           <div className="status-list">
             {monitoringStatus.map((item, i) => (
               <div key={i} className="status-item">
